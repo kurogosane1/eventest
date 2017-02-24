@@ -1,0 +1,20 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "This is what we are using for testing the app if it works or not",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Syed Saad Khurshid",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "moment": "^2.17.1",
+    "mysql": "^2.13.0",
+    "path": "^0.12.7",
+    "sequelize": "^3.30.2"
+  }
+}

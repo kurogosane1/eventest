@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Events!</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Moment.js -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+
+     <!--CSS 
+    <link rel="stylesheet" type="text/css" href="css/style.css">-->
+
+</head>
+
+<body>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-sm-12'>
+                <h1>Events</h1>
+            </div>
+            <div class='row'>
+                <!--this in the future could be hidden so that the user upon clicking create an event sees this-->
+                <div class='col-sm-9'>
+                    <h3>book an event</h3>
+                    <p class="cool-font">Event Name</p>
+                    <input class="form-control" type="text" id="event-name" placeholder="Enter Event Name">
+                    <br>
+                    <p class="cool-font">Description</p>
+                    <textarea class="form-control" rows="3" id="description" placeholder="Please describe this event!"></textarea>
+                    
+                    <br>
+                    <p class="cool-font">When</p>
+                    <input class="form-control" type="text" id="when_at" placeholder="MM-DD-YYYY">
+                    <br>
+                    <p class="cool-font">By Who</p>
+                    <input class="form-control" type="text" id="author" placeholder="Who is the Author">
+                    <button id="event-submit" class="btn btn-lg pull-right">Submit!</button>
+
+
+                </div>
+                <div class='col-sm-3'></div>
+
+            </div>
+            <div class='row'>
+                <div class='col-sm-9'>
+                    <h4> Upcoming Events</h4>
+                    <!--this is where the up coming events would be shown-->
+                    <span id 'events-to-show'></span>
+                </div>
+                <div class='col-sm-3'>
+                   <div id='calendar'>
+                     <!--this is where the calendar would be shown  -->
+                   </div>
+                   <div id='events created'>
+                       <!--here is where the user created events would be shown-->
+                       <span id='events-post'></span>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/event.js"></script>
+  </body>
+</body>
+</html>
+
