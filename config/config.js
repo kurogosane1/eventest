@@ -6,7 +6,7 @@
 var Sequelize = require("sequelize");
 
 // Creates mySQL connection using Sequelize
-var sequelize = new Sequelize("eventtest_db", "root", "saadkhurshid310588", {
+var sequelize = new Sequelize("eventtest_db", "root", "Enter your password inside quotes", {
   host: "localhost",
   dialect: "mysql",
   pool: {

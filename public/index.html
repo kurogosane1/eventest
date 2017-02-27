@@ -4,73 +4,148 @@
 <head>
     <meta charset="UTF-8">
     <title>Events!</title>
-
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
     <!-- jQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
     <!-- Moment.js -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
-
-     <!--CSS 
+    <!--CSS
     <link rel="stylesheet" type="text/css" href="css/style.css">-->
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class='container'>
         <div class='row'>
             <div class='col-sm-12'>
-                <h1>Events</h1>
-            </div>
+                <h1>Events</h1> </div>
+            <br>
+            <br>
+            <br>
             <div class='row'>
+                <div class='col-sm-4'>
+                    <h5>Create an Event</h5>
+                    <!--                    <button class="btn btn-md pull-left" type='submit' id='event-creation'>Create</button>-->
+                    <!-- Button trigger modal -->
+                    <button type="button" id='event-creation' class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"> Create Event </button>
+                </div>
+                <div class='col-sm-8'> </div>
+            </div>
+            <!-- Modal -->
+
+            <!--==========================================-->
+            <div id='event-creater-section' class='row'>
                 <!--this in the future could be hidden so that the user upon clicking create an event sees this-->
-                <div class='col-sm-9'>
-                    <h3>book an event</h3>
+                <!--
+                <div class='col-sm-7'>
+                    <h3>Book an event</h3>
                     <p class="cool-font">Event Name</p>
                     <input class="form-control" type="text" id="event-name" placeholder="Enter Event Name">
                     <br>
                     <p class="cool-font">Description</p>
                     <textarea class="form-control" rows="3" id="description" placeholder="Please describe this event!"></textarea>
-                    
                     <br>
                     <p class="cool-font">When</p>
                     <input class="form-control" type="text" id="when_at" placeholder="MM-DD-YYYY">
                     <br>
+                    <p class='cool-font'>Location</p>
+                    <input class="form-control" type="text" id="where_at" placeholder="please enter complete address with no coma">
+                    <br>
+                    <p class='cool-font'>Time</p>
+                    <input class="form-control" type="text" id="time_at" placeholder="please enter time as HH:MM">
+                    <br>
+-->
+                <!--                    this should be hidden and run using the function-->
+                <!--                    <p>Please enter how many would attend?</p>-->
+                <!--<button class="btn btn-sm pull-left" type='submit' id='yes-attend'>Yes</button>
+                    <button class="btn btn-sm pull-left" type='submit' id='No-attend'>No</button>-->
+                <!--<br>-->
+                <!--                    this is where the user chooses how many would enter-->
+                <!--
+                    <input class="form-control" type="text" id="who-attends" placeholder="enter only numbers">
+                    <br>
+-->
+                <!--                    this is where the user_id should be picked up-->
+                <!--
                     <p class="cool-font">By Who</p>
                     <input class="form-control" type="text" id="author" placeholder="Who is the Author">
-                    <button id="event-submit" class="btn btn-lg pull-right">Submit!</button>
-
-
+                    <br>
+                    <button id="event-submit" class="btn btn-md pull-right">Submit!</button>
                 </div>
-                <div class='col-sm-3'></div>
-
+-->
+                <div clas s='col-sm-5'></div>
             </div>
             <div class='row'>
                 <div class='col-sm-9'>
                     <h4> Upcoming Events</h4>
-                    <!--this is where the up coming events would be shown-->
-                    <span id 'events-to-show'></span>
-                </div>
+                    <!--this is where the up coming events would be shown--><span id='events-to-show'></span> </div>
                 <div class='col-sm-3'>
-                   <div id='calendar'>
-                     <!--this is where the calendar would be shown  -->
-                   </div>
-                   <div id='events created'>
-                       <!--here is where the user created events would be shown-->
-                       <span id='events-post'></span>
+                    <div id='calendar'>
+                        <!--this is where the calendar would be shown  -->
+                    </div>
+                    <div id='events created'>
+                        <!--here is where the user created events would be shown--><span id='events-post'></span> </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="js/event.js"></script>
-  </body>
-</body>
-</html>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="myModalLabel">Book an event</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
+                            </div>
+                        <div class="modal-body">
+
+                            <p class="cool-font">Event Name</p>
+                            <input class="form-control" type="text" id="event-name" placeholder="Enter Event Name">
+                            <br>
+                            <p class="cool-font">Description</p>
+                            <textarea class="form-control" rows="3" id="description" placeholder="Please describe this event!"></textarea>
+                            <br>
+                            <p class="cool-font">When</p>
+                            <div class="input-group date">
+    <input type="text" class="form-control" value="12-02-2012" id='when_at'>
+    <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+    </div>
+</div>
+                            <!--<input class="form-control" type="text" id="when_at" placeholder="MM-DD-YYYY">-->
+                            <br>
+                            <p class='cool-font'>Location</p>
+                            <input class="form-control" type="text" id="where_at" placeholder="please enter complete address with no coma">
+                            <br>
+                            <p class='cool-font'>Time</p>
+                            <input class="form-control" type="text" id="time_at" placeholder="please enter time as HH:MM">
+                            <br>
+                            <!--                    this should be hidden and run using the function-->
+                            <p>Please enter how many would attend?</p>
+                            <!--<button class="btn btn-sm pull-left" type='submit' id='yes-attend'>Yes</button>
+                    <button class="btn btn-sm pull-left" type='submit' id='No-attend'>No</button>-->
+                            <!--<br>-->
+                            <!--                    this is where the user chooses how many would enter-->
+                            <input class="form-control" type="text" id="who-attends" placeholder="enter only numbers">
+                            <br>
+                            <!--                    this is where the user_id should be picked up-->
+                            <p class="cool-font">By Who</p>
+                            <input class="form-control" type="text" id="author" placeholder="Who is the Author">
+                            <br>
+<!--                            <button id="event-submit" class="btn btn-md pull-right">Submit!</button>-->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" id="event-submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <script type="text/javascript" src="js/event.js"></script>
+</body>
+
+</html>

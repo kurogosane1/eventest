@@ -7,16 +7,20 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/config.js");
 
 // Creates a "event" model that matches up with DB
-var Events = sequelize.define("event", {
-  id: {
+var Events = sequelize.define("event4", {
+  Event_id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
     primaryKey: true
   },
   author: {
-    type: Sequelize.STRING
+    type:Sequelize.TEXT
   },
-  eName: {
+  Status: {
+    type: Sequelize.STRING,
+    defaultValue: "Host"
+  },
+  event_Name: {
     type: Sequelize.STRING
   },
   description: {
@@ -24,13 +28,28 @@ var Events = sequelize.define("event", {
   },
   when_at: {
     type: Sequelize.DATE
+  },
+  time: {
+    type: Sequelize.TIME
+  },
+  attendee: {
+    type: Sequelize.INTEGER
+  },
+  location:{
+    type: Sequelize.STRING``
   }
-}, {
+}, 
+{
   timestamps: false
 });
 console.log(Events);
+
+// creating a table to test upoming pop up//
+
+
+
 // Syncs with DB
-Events.sync();
+Events.sync({});
 
 // Makes the Chirp Model available for other files (will also create a table)
 module.exports = Events;

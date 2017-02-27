@@ -23,6 +23,10 @@ module.exports = function(app){
         console.log(req.body);
         Events.create({
             author: req.body.author,
+            event_Name: req.body.event_Name,
+            time: req.body.time,
+            attendee: req.body.attendee,
+            location:req.body.location,
             description: req.body.description,
             when_at: req.body.when_at
         }).then(function(results){
